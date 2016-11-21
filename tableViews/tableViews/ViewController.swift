@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         //simply asking how many rows are there in the table?
-            return 1
+            return cellContent.count
     }
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -25,7 +25,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
         
-        cell.textLabel?.text = "Top row"
+        cell.textLabel?.text = cellContent[indexPath.row]
         
         return cell
         
