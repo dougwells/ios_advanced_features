@@ -33,3 +33,9 @@ newTypeGreeting.components(separatedBy: " ")//["Hello", "Doug"]
     newTypeGreeting.uppercased
     newTypeGreeting.lowercased
 
+let text = "123045780984"
+if let rangeOfZero = text.range(of: "0", options: .backwards) {
+    // Found a zero
+    let suffix = String(text.characters.suffix(from: rangeOfZero.upperBound)) // "984"
+}
+
