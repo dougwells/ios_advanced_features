@@ -22,9 +22,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4M-v2-yTn">
-                                <rect key="frame" x="171" y="112" width="32" height="30"/>
+                                <rect key="frame" x="154" y="112" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Next"/>
+                                <state key="normal" title="Play"/>
                                 <connections>
                                     <action selector="nextTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vi4-RR-L7a"/>
                                 </connections>
@@ -38,6 +38,7 @@
                     </view>
                     <connections>
                         <outlet property="image" destination="hKx-R3-t3Y" id="L5y-6p-3Id"/>
+                        <outlet property="startStopBtn" destination="U4M-v2-yTn" id="Rdk-RY-RbD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
