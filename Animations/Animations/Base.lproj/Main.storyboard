@@ -21,20 +21,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4M-v2-yTn">
-                                <rect key="frame" x="154" y="112" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame_0_delay-0.1s.gif" translatesAutoresizingMaskIntoConstraints="NO" id="hKx-R3-t3Y">
+                                <rect key="frame" x="0.0" y="185" width="375" height="284"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="284" id="L3o-zI-3Ep"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4M-v2-yTn">
+                                <rect key="frame" x="142.5" y="115" width="90" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="Kjn-To-30j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
                                     <action selector="nextTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vi4-RR-L7a"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frame_0_delay-0.1s.gif" translatesAutoresizingMaskIntoConstraints="NO" id="hKx-R3-t3Y">
-                                <rect key="frame" x="0.0" y="163" width="385" height="319"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hKx-R3-t3Y" secondAttribute="trailing" id="BRf-rF-go0"/>
+                            <constraint firstItem="hKx-R3-t3Y" firstAttribute="top" secondItem="U4M-v2-yTn" secondAttribute="bottom" constant="25" id="PQs-kB-JDa"/>
+                            <constraint firstItem="hKx-R3-t3Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="V1D-wu-na8"/>
+                            <constraint firstItem="U4M-v2-yTn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="95" id="liC-SD-wb5"/>
+                            <constraint firstItem="U4M-v2-yTn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="txi-xV-Vk0"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="image" destination="hKx-R3-t3Y" id="L5y-6p-3Id"/>

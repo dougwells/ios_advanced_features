@@ -13,12 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var startStopBtn: UIButton!
     
     var count = 1
+    var timer = Timer()
     
-    var timer = Timer.scheduledTimer(timeInterval: 1,
-        target: self,
-        selector: Selector(("animateFunction")),
-        userInfo: nil,
-        repeats: true)
+
+
     
  
     
@@ -26,6 +24,14 @@ class ViewController: UIViewController {
     @IBAction func nextTapped(_ sender: Any) {
         if startStopBtn.currentTitle == "Play" {
             startStopBtn.setTitle("Pause",for: .normal)
+            
+            timer = Timer.scheduledTimer(
+                timeInterval: 0.3,
+                target: self,
+                selector: #selector(ViewController.animate),
+                userInfo: nil,
+                repeats: true
+            )
         
         } else {
             timer.invalidate()
@@ -34,12 +40,8 @@ class ViewController: UIViewController {
 
         }
 
-/*
-         if count > 5 {count = 0 }
-         let imageName = "frame_" + String(count) + "_delay-0.1s.gif"
-         image.image = UIImage(named: imageName)
-         count = count + 1
-*/
+
+
 
 /*
         for num in 1...5 {
@@ -57,6 +59,13 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func animate() {
+        if count > 5 {count = 0 }
+        let imageName = "frame_" + String(count) + "_delay-0.1s.gif"
+        image.image = UIImage(named: imageName)
+        count = count + 1
     }
     
     func animateFunction () {
