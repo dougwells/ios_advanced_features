@@ -45,9 +45,15 @@ class ViewController: UIViewController {
         // Note different syntax for animate.
         // Can use either animation syntax
         
-        image.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        //capture coordinates for original location
+        let x = image.frame.minX
+        let y = image.frame.minY
+        let width = image.frame.width
+        let height = image.frame.height
+        
+        image.frame = CGRect(x: x, y: y, width: 0, height: 0)
         UIView.animate(withDuration: 1){
-            self.image.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+            self.image.frame = CGRect(x: x, y: y, width: width, height: height)
         }
     }
 
