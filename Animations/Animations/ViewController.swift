@@ -15,11 +15,42 @@ class ViewController: UIViewController {
     var count = 1
     var timer = Timer()
     
-
-
+    @IBAction func fadeTapped(_ sender: Any) {
+        //fade image in
+        
+        //set start point (image transparent)
+        image.alpha = 0
+        
+        //animate image transparancy to 1)
+        UIView.animate(withDuration: 1, animations: {
+            self.image.alpha = 1
+            }
+        )
+    }
     
- 
+    @IBAction func slideTapped(_ sender: Any) {
+        //move image from left to right
+        
+        //set start point (x = 500 to left)
+        image.center = CGPoint(x: image.center.x - 500, y:image.center.y)
+        
+        //animate: move image from left to center
+        UIView.animate(withDuration: 1, animations: {
+            self.image.center = CGPoint(x: self.image.center.x+500, y: self.image.center.y)
+        })
+        
+    }
     
+    @IBAction func growTapped(_ sender: Any) {
+        // Note different syntax for animate.
+        // Can use either animation syntax
+        
+        image.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        UIView.animate(withDuration: 1){
+            self.image.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        }
+    }
+
     
     @IBAction func nextTapped(_ sender: Any) {
         if startStopBtn.currentTitle == "Play" {
@@ -35,21 +66,10 @@ class ViewController: UIViewController {
         
         } else {
             timer.invalidate()
-            startStopBtn.setTitle("Play", for: .normal)
+            startStopBtn.setTitle("Play", for: [])
             
-
         }
 
-
-
-
-/*
-        for num in 1...5 {
-           var imageName = "frame_" + String(num) + "_delay-0.1s.gif"
-            print(imageName)
-        image.image = UIImage(named: imageName)
-        }
- */
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,11 +88,6 @@ class ViewController: UIViewController {
         count = count + 1
     }
     
-    func animateFunction () {
-        print("Hello World!")
-        count = count + 1
-        if count > 5 {timer.invalidate()}
-    }
 
 
 }
