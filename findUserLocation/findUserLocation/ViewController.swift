@@ -27,10 +27,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     
     {
-        //delete previous annotation
-        let allAnnotations = map.annotations
-        map.removeAnnotations(allAnnotations)
-        
         //set lat, lon and deltas
         let userLocation: CLLocation = locations[0]
         print(userLocation)
@@ -49,14 +45,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let region: MKCoordinateRegion = MKCoordinateRegion(center: location, span: span)
         
         //Finally, time to tell iOS where in map to set initial location and zoom level
-        map.setRegion(region, animated: true)
+        self.map.setRegion(region, animated: true)
         
+        //set annotation (delete prev annot & create new one)
+        if map.annotations.count != 0 {
+            map.removeAnnotations(map.annotations)
+        }
         let annotation = MKPointAnnotation()
-        annotation.title = "This is my locatipon"
-        annotation.subtitle = "Look at me go!"
         annotation.coordinate.latitude = latitude
         annotation.coordinate.longitude = longitude
-        map.addAnnotation(annotation)
+        self.map.addAnnotation(annotation)
+        
 
     }
 
