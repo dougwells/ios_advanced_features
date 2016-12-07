@@ -10,11 +10,14 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    var username = "doug"
+    var activeRow = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        var username = "doug"
-        
-        print("VC 2: ", globalVariable, username)
+        print("Segue from VC1. \n username: \(username) \n activeRow: \(activeRow)")
+        username = "doug"
+        print("Reset username: \(username)")
         
 
         // Do any additional setup after loading the view.

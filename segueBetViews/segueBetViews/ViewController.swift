@@ -10,9 +10,30 @@ import UIKit
 
 let globalVariable = "Doug"
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var userChosenRow = 0
+    
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
 
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+            let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
+        
+            cell.textLabel?.text = "Row \(indexPath.row)"
+        
+            return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        userChosenRow = indexPath.row
+        performSegue(withIdentifier: "toSecondViewController", sender: nil)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -30,11 +51,10 @@ class ViewController: UIViewController {
         
         if segue.identifier == "toSecondViewController" {
             let secondViewController = segue.destination as! SecondViewController
-            secondViewController.username = "linda"
+            print("Value of username BEFORE seque: ", secondViewController.username)
+            secondViewController.username = "Linda"
+            secondViewController.activeRow = userChosenRow
         }
     }
-
-
-
 }
 
