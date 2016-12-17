@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  findUserLocation
+//  swipesAndShakes
 //
-//  Created by Doug Wells on 12/4/16.
+//  Created by Doug Wells on 12/17/16.
 //  Copyright © 2016 Doug Wells. All rights reserved.
 //
 

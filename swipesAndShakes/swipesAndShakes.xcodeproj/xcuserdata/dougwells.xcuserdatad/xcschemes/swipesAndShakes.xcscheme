@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7005D0761DF48A2300FE7D8F"
-               BuildableName = "findUserLocation.app"
-               BlueprintName = "findUserLocation"
-               ReferencedContainer = "container:findUserLocation.xcodeproj">
+               BlueprintIdentifier = "7005D1AF1E05760B00FE7D8F"
+               BuildableName = "swipesAndShakes.app"
+               BlueprintName = "swipesAndShakes"
+               ReferencedContainer = "container:swipesAndShakes.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7005D0761DF48A2300FE7D8F"
-            BuildableName = "findUserLocation.app"
-            BlueprintName = "findUserLocation"
-            ReferencedContainer = "container:findUserLocation.xcodeproj">
+            BlueprintIdentifier = "7005D1AF1E05760B00FE7D8F"
+            BuildableName = "swipesAndShakes.app"
+            BlueprintName = "swipesAndShakes"
+            ReferencedContainer = "container:swipesAndShakes.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7005D0761DF48A2300FE7D8F"
-            BuildableName = "findUserLocation.app"
-            BlueprintName = "findUserLocation"
-            ReferencedContainer = "container:findUserLocation.xcodeproj">
+            BlueprintIdentifier = "7005D1AF1E05760B00FE7D8F"
+            BuildableName = "swipesAndShakes.app"
+            BlueprintName = "swipesAndShakes"
+            ReferencedContainer = "container:swipesAndShakes.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7005D0761DF48A2300FE7D8F"
-            BuildableName = "findUserLocation.app"
-            BlueprintName = "findUserLocation"
-            ReferencedContainer = "container:findUserLocation.xcodeproj">
+            BlueprintIdentifier = "7005D1AF1E05760B00FE7D8F"
+            BuildableName = "swipesAndShakes.app"
+            BlueprintName = "swipesAndShakes"
+            ReferencedContainer = "container:swipesAndShakes.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>findUserLocation.xcscheme</key>
+		<key>swipesAndShakes.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>7005D0761DF48A2300FE7D8F</key>
+		<key>7005D1AF1E05760B00FE7D8F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

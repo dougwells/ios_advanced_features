@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:findUserLocation.xcodeproj">
+      location = "self:swipesAndShakes.xcodeproj">
    </FileRef>
 </Workspace>
