@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "70E6A2521E0820CF0040A509"
-               BuildableName = "coreData.app"
-               BlueprintName = "coreData"
-               ReferencedContainer = "container:coreData.xcodeproj">
+               BlueprintIdentifier = "70E6A2731E0824A30040A509"
+               BuildableName = "coreDataDemo.app"
+               BlueprintName = "coreDataDemo"
+               ReferencedContainer = "container:coreDataDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "70E6A2521E0820CF0040A509"
-            BuildableName = "coreData.app"
-            BlueprintName = "coreData"
-            ReferencedContainer = "container:coreData.xcodeproj">
+            BlueprintIdentifier = "70E6A2731E0824A30040A509"
+            BuildableName = "coreDataDemo.app"
+            BlueprintName = "coreDataDemo"
+            ReferencedContainer = "container:coreDataDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "70E6A2521E0820CF0040A509"
-            BuildableName = "coreData.app"
-            BlueprintName = "coreData"
-            ReferencedContainer = "container:coreData.xcodeproj">
+            BlueprintIdentifier = "70E6A2731E0824A30040A509"
+            BuildableName = "coreDataDemo.app"
+            BlueprintName = "coreDataDemo"
+            ReferencedContainer = "container:coreDataDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "70E6A2521E0820CF0040A509"
-            BuildableName = "coreData.app"
-            BlueprintName = "coreData"
-            ReferencedContainer = "container:coreData.xcodeproj">
+            BlueprintIdentifier = "70E6A2731E0824A30040A509"
+            BuildableName = "coreDataDemo.app"
+            BlueprintName = "coreDataDemo"
+            ReferencedContainer = "container:coreDataDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
