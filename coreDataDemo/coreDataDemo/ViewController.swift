@@ -27,9 +27,9 @@ class ViewController: UIViewController {
         //Create object that allows us to save a new user
             let newUser = NSEntityDescription.insertNewObject(forEntityName: "Users", into: context)
         
-        newUser.setValue("doug", forKey: "username")
+        newUser.setValue("sierra", forKey: "username")
         newUser.setValue("myPass", forKey: "password")
-        newUser.setValue(35, forKey: "age")
+        newUser.setValue(16, forKey: "age")
         
         do {
             
@@ -48,9 +48,9 @@ class ViewController: UIViewController {
         do {
             let results = try context.fetch(request)
             
-            if results.count >0 {
+            if (results.count > 0) {
                 for result in results as! [NSManagedObject] {
-                    if let username = result.value(forKey: "username") as? Sting {
+                    if let username = result.value(forKey: "username") as? String {
                         print(username)
                     }
                 }
