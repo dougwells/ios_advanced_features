@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var deletedName = ""
+        
         // Gives us access to methods in AppDelegate.swift
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
@@ -36,7 +38,7 @@ class ViewController: UIViewController {
         do {
             
             try context.save()
-            print("Saved")
+            print("New user saved")
             
         } catch {
             print("Error in saving to Database. Do-Try-Catch")
@@ -54,7 +56,7 @@ class ViewController: UIViewController {
         
         //request.predicate = NSPredicate(format: "age < %@", "21")
         
-        request.predicate = NSPredicate(format: "username = %@", "Doug")
+        //request.predicate = NSPredicate(format: "username = %@", "Doug")
         
         request.returnsObjectsAsFaults = false
         
@@ -64,27 +66,30 @@ class ViewController: UIViewController {
             
             if (results.count > 0) {
                 
+                print("Users found with search parameters")
+                print("----------")
+                
                 //loop thru array of result objects and print username
                 for result in results as! [NSManagedObject] {
                     if let username = result.value(forKey: "username") as? String {
                         print(username)
+                        deletedName = username
                     }
                     
+                
                     context.delete(result)
                     
                     do {
                         try context.save()
-                        print("Delete succeeded")
+                        print("Successfully deleted \(deletedName)")
                         
                     } catch {
-                        print("Delete Failed")
+                        print("Could not delete \(deletedName)")
                     }
+                
                     
-                    
-                    if let username = result.value(forKey: "username") as? String {
-                        print(username)
-                    }
-                }
+                } // End For Loop
+                
             } else {
                 print("No results")
             }
