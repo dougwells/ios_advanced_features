@@ -15,27 +15,54 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: "https://s-media-cache-ak0.pinimg.com/564x/2a/77/21/2a7721cfae2c24431d8e4aaf746cc036.jpg")!
+    //define path to previously saved image
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentsDirectory = documentsPath[0]
+        let restorePath = documentsDirectory + "/duckDive.jpg"
+        
+        //set UIImageView to saved image
+        surfSunsetImageView.image = UIImage(contentsOfFile: restorePath)
+        
+    /*
+      //Download image from Internet
+         
+        let url = URL(string: "https://s-media-cache-ak0.pinimg.com/564x/17/0a/0d/170a0d8787021b4b3d9c91cea007805e.jpg")!
         let request = NSMutableURLRequest(url: url)
         
         let task = URLSession.shared.dataTask(with: request as URLRequest){
             data, response, error in
             
             if error != nil {
-                print(error)
+                print("Failed to download image", error)
                 
             } else {
                 
             if  data != nil {    //unwraps data if exists
-                if let surfSunset = UIImage(data: data!) {
-                        self.surfSunsetImageView.image = surfSunset
+                if let duckDive = UIImage(data: data!) {
+               
+                //show image
+                    self.surfSunsetImageView.image = duckDive
+               
+                //save image locally
+                    //set path to save image
+                    let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+                    let documentsDirectory = documentsPath[0]
+                    let savePath = documentsDirectory + "/duckDive.jpg"
+                        
+                    //save image itself
+                        do {
+                        try UIImageJPEGRepresentation(duckDive, 1)?.write(to: URL(fileURLWithPath: savePath))
+                        } catch {
+                            print("Error saving image locally", error)
+                        }
                     
-                    }
+                    } //end if let surfSunset
                 }
                 
             }
         }
         task.resume()
+    */
 
     }
 
