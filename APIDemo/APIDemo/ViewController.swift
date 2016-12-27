@@ -16,8 +16,26 @@ class ViewController: UIViewController {
         let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=08e64df2d3f3bc0822de1f0fc22fcb2d")
         
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            <#code#>
+            
+            if error != nil {
+                print(error)
+                
+            }else {
+                if let urlContent = data {
+                    
+                    do {
+                    
+                        let jsonResult = try JSONSerialization.jsonObject(with: urlContent, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
+                    
+                        print(jsonResult)
+                        
+                    } catch {
+                        print("JSON Serialization failed")
+                    }
+                }
+            }
         }
+        task.resume()
     }
 
     override func didReceiveMemoryWarning() {
