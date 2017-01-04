@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    //Spinning activity "waiting" wheel
+    
+    var activityIndicator = UIActivityIndicatorView()
 
     @IBAction func createAlert(_ sender: Any) {
         
@@ -37,9 +41,29 @@ class ViewController: UIViewController {
     }
     
     @IBAction func pauseApp(_ sender: Any) {
+        
+        // Spinner-Wheel on pause
+        // CGRect = rectangular indicator (x&y=offset amount)
+        activityIndicator = UIActivityIndicatorView.init(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        
+        //set location for spinwheel indicator
+        activityIndicator.center = self.view.center
+        
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        
+        //Eliminate users ability to interact with app while
+            //UIApplication.shared.beginIgnoringInteractionEvents()
+        
     }
     
     @IBAction func resumeApp(_ sender: Any) {
+        
+        //Stop spin-wheel & resume user ability to interact with App
+        activityIndicator.stopAnimating()
+            //UIApplication.shared.endIgnoringInteractionEvents()
     }
     
     
