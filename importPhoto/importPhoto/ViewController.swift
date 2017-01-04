@@ -10,6 +10,22 @@ import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        // function passes us an object "info" on user selected image
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+        //Updates imageView on Main.storyboard (see IBOutlet below)
+            imageView.image = image
+            
+        } else {
+            print("There was a problem getting the image")
+        }
+        
+        //closes our function "imagePickerController"
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func importImage(_ sender: Any) {
