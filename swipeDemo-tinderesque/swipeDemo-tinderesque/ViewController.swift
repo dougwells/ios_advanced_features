@@ -55,6 +55,7 @@ class ViewController: UIViewController {
         if gestureRecognizer.state == UIGestureRecognizerState.ended {
             
             //Chosen = drag right.  Reject = drag left
+            //15 pixels before actions kick in
             if translation.x < -15 {
             
                 print ("Not chosen")
@@ -63,7 +64,7 @@ class ViewController: UIViewController {
                 print ("Chosen")
             }
             
-        //Reset size, rotation and location of label
+        //Reset size, rotation and location of label at swipe end
             label.center = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height/2)
             rotation = CGAffineTransform(rotationAngle: 0)
             stretchAndRotation = rotation.scaledBy(x: 1, y: 1)
