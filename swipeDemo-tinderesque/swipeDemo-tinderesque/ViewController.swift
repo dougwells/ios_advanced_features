@@ -33,7 +33,13 @@ class ViewController: UIViewController {
     
     func wasDragged(gestureRecognizer: UIPanGestureRecognizer) {
         
-        print("Was dragged")
+        //Move label center to where user drags.
+            //translation: location user drag stops relative to start
+        let translation = gestureRecognizer.translation(in: view)
+        
+        //Define label (on gestureRecognizer passed in) & move label
+        let label = gestureRecognizer.view!
+        label.center = CGPoint(x: self.view.bounds.width/2 + translation.x, y: self.view.bounds.height/2 + translation.y)
         
     }
 
