@@ -41,21 +41,36 @@ class ViewController: UIViewController {
         let label = gestureRecognizer.view!
         label.center = CGPoint(x: self.view.bounds.width/2 + translation.x, y: self.view.bounds.height/2 + translation.y)
         
+    //Add label transformation as user drags (radians, 2pi per 360)
+        
+        let xFromCenter = translation.x
+        let scale = min(100/abs(xFromCenter), 1)
+        
+        var rotation = CGAffineTransform(rotationAngle: xFromCenter/100)
+        var stretchAndRotation = rotation.scaledBy(x: scale, y: scale)
+        
+        label.transform = stretchAndRotation
+        
     //Do diff actions if label moved left vs right
         if gestureRecognizer.state == UIGestureRecognizerState.ended {
             
-            print(translation)
-            
-            if translation.x < 0 {
+            //Chosen = drag right.  Reject = drag left
+            if translation.x < -15 {
             
                 print ("Not chosen")
             
-            } else {
+            } else if translation.x > 15 {
                 print ("Chosen")
             }
             
+        //Reset size, rotation and location of label
             label.center = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height/2)
+            rotation = CGAffineTransform(rotationAngle: 0)
+            stretchAndRotation = rotation.scaledBy(x: 1, y: 1)
+            label.transform = stretchAndRotation
         }
+        
+
         
     }
 
